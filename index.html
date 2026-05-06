@@ -1,11 +1,328 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Репетитор | Михаил</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Репетитор Михаил</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #e0e7ff 0%, #f8f9fa 100%);
+            color: #1f2937;
+            line-height: 1.5;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 32px;
+            padding: 30px;
+            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Шапка с фото */
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #3b82f6, #6366f1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+            box-shadow: 0 8px 20px rgba(59,130,246,0.3);
+        }
+
+        .header-text {
+            flex: 1;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            color: #3b82f6;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin: 35px 0 15px 0;
+            padding-left: 12px;
+            border-left: 5px solid #3b82f6;
+        }
+
+        .subjects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0 10px 0;
+        }
+
+        .subject {
+            background: #eef2ff;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .subject:hover {
+            background: #3b82f6;
+            color: white;
+            transform: scale(1.02);
+        }
+
+        /* Карточка отзыва */
+        .review {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: all 0.2s;
+        }
+
+        .review:hover {
+            background: #f1f5f9;
+            transform: scale(1.02);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .pros {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition:all 0.2s;
+            font-weight: 500;
+            border-left: 5px solid #3b82f6;
+        }        
+
+        .pros:hover {
+            background: #f1f5f9;
+            transform: scale(1.02);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .pros strong {
+            color:#3b82f6;
+        }
+
+        .review strong {
+            color: #3b82f6;
+        }
+
+        .price-block {
+            flex: 1;
+            min-width: 200px;
+            background: linear-gradient(135deg, #3b82f610 0%, #6366f110 100%);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .price {
+            font-size: 32px;
+            font-weight: 800;
+            color: #3b82f6;
+        }
+
+        .price-note {
+            font-size: 18px;
+            color: #6c757d;
+            margin-top: 2px;
+        }
+
+        .price-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .contact {
+            background: #1f2937;
+            padding: 20px;
+            border-radius: 14px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact a {
+            display: inline-block;
+            margin: 8px;
+            padding: 12px 24px;
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .contact a:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(59,130,246,0.4);
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 0 10px 0;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(59,130,246,0.3);
+        }
+
+        .btn-primary:hover {
+            background: #2563eb;
+            transform: scale(1.02);
+        }
+
+        hr {
+            margin: 30px 0 20px;
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, #e5e7eb, transparent);
+        }
+
+        footer {
+            text-align: center;
+            color: #6c757d;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 20px; }
+            h1 { font-size: 26px; }
+            .avatar { width: 70px; height: 70px; font-size: 32px; }
+            .price { font-size: 28px; }
+            .grid-2 {
+            grid-template-columns: 1fr;
+            }
+        }
+
+        /* Сетка 2 колонки для Помогу / Как проходят занятия */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 5px 0 20px 0;
+        }
+    </style>
 </head>
 <body>
-    <h1>Репетитор по математике и информатике</h1>
-    <p>Сайт в разработке. Полная версия будет 12 мая.</p>
+
+<div class="container">
+    <!-- ШАПКА С ФОТО-ЗАГЛУШКОЙ -->
+    <div class="header">
+        <div class="avatar">📘</div> <!-- заглушка-->
+        <div class="header-text">
+            <h1>Михаил Большаков</h1>
+            <div class="subtitle">Репетитор по математике</div>
+        </div>
+    </div>
+
+    <!-- О СЕБЕ + КНОПКА -->
+    <p>Здравствуйте! Меня зовут Михаил. Системно готовлю учеников 5-9 классов по математике. Занятия онлайн.</p>
+    <a href="#" class="btn-primary">Записаться на пробный урок</a> <!-- заглушка-->
+
+    <!-- ПРЕДМЕТЫ -->
+    <h2>Предметы</h2>
+    <div class="subjects">
+        <span class="subject">Математика 5–9 класс</span>
+        <span class="subject">Подготовка к ОГЭ</span>
+        <span class="subject">Алгебра</span>
+        <span class="subject">Геометрия</span>
+    </div>
+    <!-- чем помогу -->
+    <h2>Помогу</h2>
+    <div class="grid-2">
+        <div class="pros">Подтянуть текущие оценки</div>
+        <div class="pros">Подготовиться к новому учебному году</div>
+        <div class="pros">Восполнить пробелы по алгебре и геометрии</div>
+        <div class="pros">Поднять уверенность в предмете</div>
+    </div>
+    <!-- как проходят занятия -->
+    <h2>Как проходят занятия</h2>
+    <div class="grid-2">
+        <div class="pros">45 минут интенсивной работы</div>
+        <div class="pros">Решаем, а не просто слушаем</div>
+        <div class="pros">Домашка после каждого занятия</div>
+        <div class="pros">Веду трекер прогресса учеников — вы видите, какие темы уже освоены</div>
+    </div>
+
+    <!-- ОТЗЫВЫ -->
+    <h2>Отзывы учеников</h2>
+    <div class="review">
+        <strong>Ирина: мама сына из 5 класса</strong> «Хочу выразить огромную благодарность Михаилу. Сын занимается с большим удовольствием, что для меня самый главный показатель. Прогресс в школе уже заметен, но главное — появилась уверенность в своих силах. Очень благодарна за терпение, чуткий подход и умение заинтересовать подростка! Рекомендую от всей души.»
+    </div>
+    <div class="review">
+        <strong>Виктория: мама сына из 8 класса</strong> «Михаил нашел подход к моему сыну подростку. Довольно понятно и просто ему все объяснил и у моего сына кардинально улучшились оценки. Сын стал себя чувствовать более уверенным на занятиях.»
+    </div>
+    <div class="review">
+        <strong>Людмила: мама сына из 8 класса</strong> «Моему сыну подростку 14 лет очень нравится занятия с Михаилом Сергеевичем. Занятия проходят легко, вся тяжелая информация объясняется понятным и простым языком. Ребенок начал лучше понимать алгебру, стабильно решает контрольные работы и готов к успешной подготовке к будущим экзаменам. Очень радует, что есть такие молодые талантливые , у которых всё не только четко, ясно и структурировано, а еще дружелюбно и позитивно. Лучшие рекомендации 🙌 Однозначно советую данного преподавателя. Спасибо Вам огромное Михаил Сергеевич.»
+    </div>
+
+    <!-- ЦЕНЫ -->
+    <h2>Стоимость занятий</h2>
+    <div class="price-list">
+        <div class="price-block">
+            <div class="price">1500 ₽ / 45 минут</div>
+            <div class="price-note">Индивидуально</div>
+            <div class="price-note">Первое занятие-диагностика - 500 ₽</div>
+        </div>
+        <div class="price-block">
+            <div class="price">1000 ₽ / 45 минут</div>
+            <div class="price-note">Мини-группа (4-5 человек)</div>
+        </div>
+    </div>
+
+    <!-- КОНТАКТЫ -->
+    <h2>Свяжитесь со мной</h2>
+    <div class="contact">
+        <a href="#"> WhatsApp</a> <!-- заглушка-->
+        <a href="#"> Telegram</a> <!-- заглушка-->
+        <p style="color: #cbd5e1; margin-top: 18px;">+7 (926) 578-89-56 | г. Одинцово</p>
+    </div>
+
+    <hr>
+    <footer>
+        © 2026 Михаил Большаков — репетитор по математике
+    </footer>
+</div>
+
 </body>
 </html>
